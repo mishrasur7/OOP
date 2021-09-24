@@ -27,7 +27,7 @@ public class ObjectsLanguageTranslationArray {
 			}
 		}
 		
-		if(match == true) {
+		if (match == true) {
 			System.out.println(wordArray[index].getFinnishWord());
 		} else {
 			System.out.println("Unknown word");
