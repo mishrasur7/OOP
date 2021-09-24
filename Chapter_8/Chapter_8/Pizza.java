@@ -3,25 +3,25 @@ package Chapter_8;
 import java.text.DecimalFormat;
 
 public class Pizza {
-	private String name; 
-	private double price; 
-	
+	private String name;
+	private double price;
+
 	Pizza(String name, double price) {
-		this.name = name; 
-		this.price = price; 
+		this.name = name;
+		this.price = price;
 	}
-	
+
 	String getName() {
-		return name; 
+		return name;
 	}
+
 	double getPrice() {
-		return price; 
+		return price;
 	}
-	
+
 	public String toString() {
-		DecimalFormat twoDecimals = new DecimalFormat("0.00"); 
-		return name + " (" + twoDecimals.format(price).replace('.', ',') + " euros)"; 
+		DecimalFormat twoDecimals = new DecimalFormat("0.00");
+		return name + " (" + twoDecimals.format(price).replace('.', ',') + " euros)";
 	}
-	
 
 }
