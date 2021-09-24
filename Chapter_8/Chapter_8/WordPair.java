@@ -10,11 +10,11 @@ public class WordPair {
 		this.finnishWord = finnishWord; 
 	}
 	
-	public String getEnglishWord(String englishWord) {
+	public String getEnglishWord() {
 		return englishWord; 
 	}
 	
-	public String getFinnishWord(String finnishWord) {
+	public String getFinnishWord() {
 		return finnishWord;
 	}
 	
