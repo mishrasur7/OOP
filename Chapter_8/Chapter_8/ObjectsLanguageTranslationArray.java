@@ -26,7 +26,11 @@ public class ObjectsLanguageTranslationArray {
 				index = i;
 			}
 		}
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> 47300eb6c63495f8ffc31341ec30dd356a1b1da9
 		if (match == true) {
 			System.out.println(wordArray[index].getFinnishWord());
 		} else {
