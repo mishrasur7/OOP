@@ -3,7 +3,7 @@ package Chapter_9;
 public class SecondLargest {
 //The goal of this program is to find the first and second maximum value from an array
 	public static void main(String[] args) {
-		// lets define an integer array nums with 7 values
+		// lets define an integer array nums with some values
 		int[] nums = { 2, 6, 8, 32, 56, 12, 84, 99, 100 };
 		int max = nums[0];
 		int secondMax = nums[0];
