@@ -36,7 +36,7 @@ public class ObjectsLanguageTranslationArrayList {
 		System.out.print("Enter an english word: ");
 		String engWord = input.nextLine();
 
-		int countAgain = 0;
+
 		while (!engWord.equals("quit")) {
 			boolean found = false;
 			int index = 0;
@@ -55,7 +55,7 @@ public class ObjectsLanguageTranslationArrayList {
 				System.out.print("Enter an english word: ");
 				engWord = input.nextLine();
 			}
-			countAgain++;
+			
 		}
 		System.out.println("Bye!");
 		input.close();
