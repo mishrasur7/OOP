@@ -10,7 +10,7 @@ public class Crew {
 	}
 
 	public void addCrewMember(Sailor sailor) {
-		sailorList.add(new Sailor(sailor.getName(),sailor.getEmail()));
+		sailorList.add(sailor);
 	}
 	
 	public String toString() {
