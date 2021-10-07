@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class Employee {
 	private String name; 
 	private String email; 
-	private ArrayList<Department> department = new ArrayList<Department>(); 
+	private ArrayList<Department> departmentList = new ArrayList<Department>(); 
 	
 	public Employee(String name, String email, Department department) {
 		this.name = name; 
 		this.email = email;
-		this.department = department; 
+		departmentList.add(department); 
 	}
 	
 	public String getName() {
@@ -19,6 +19,10 @@ public class Employee {
 	public String getEmail() {
 		return email; 
 	}
+	public void setDepartment(Department department) {
+		departmentList.add(department);  
+	}
+	
 	
 	public void setName(String name) {
 		this.name = name; 
@@ -28,6 +32,11 @@ public class Employee {
 	}
 	
 	public String toString() {
+		String outPut = ""; 
+		for(Department department : departmentList) {
+			outPut += department.getName(); 
+		}
+		return outPut; 
 		
 	}
 
