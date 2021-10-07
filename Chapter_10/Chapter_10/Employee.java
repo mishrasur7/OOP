@@ -3,41 +3,47 @@ package Chapter_10;
 import java.util.ArrayList;
 
 public class Employee {
-	private String name; 
-	private String email; 
-	private ArrayList<Department> departmentList = new ArrayList<Department>(); 
-	
+	private String name;
+	private String email;
+	private ArrayList<Department> departmentList = new ArrayList<Department>();
+
 	public Employee(String name, String email, Department department) {
-		this.name = name; 
+		this.name = name;
 		this.email = email;
-		departmentList.add(department); 
+		departmentList.add(department);
 	}
-	
+
 	public String getName() {
-		return name; 
+		return name;
 	}
+
 	public String getEmail() {
-		return email; 
+		return email;
 	}
-	public void setDepartment(Department department) {
-		departmentList.add(department);  
+
+	public Department getDepartment(Department department) {
+		return department;
 	}
-	
-	
+
 	public void setName(String name) {
-		this.name = name; 
+		this.name = name;
 	}
+
 	public void setEmail(String email) {
-		this.email = email; 
+		this.email = email;
 	}
-	
+
+	public void setDepartment(Department department) {
+		departmentList.add(department);
+	}
+
 	public String toString() {
-		String outPut = ""; 
-		for(Department department : departmentList) {
-			outPut += department.getName(); 
+		String outPut = "";
+		for (Department department : departmentList) {
+			outPut += department.getName();
 		}
-		return outPut; 
-		
+		return outPut;
+
 	}
 
 }
