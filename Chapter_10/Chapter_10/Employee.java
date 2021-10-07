@@ -38,11 +38,11 @@ public class Employee {
 	}
 
 	public String toString() {
-		String outPut = "";
-		for (Department department : departmentList) {
-			outPut += department.getName();
+		String outPut = ""; 
+		for(Department department : departmentList) {
+			outPut = department.getName(); 
 		}
-		return outPut;
+		return name + " (" +  email + "), " + outPut + " department"; 
 
 	}
 
