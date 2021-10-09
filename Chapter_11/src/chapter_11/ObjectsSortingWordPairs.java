@@ -22,27 +22,19 @@ public class ObjectsSortingWordPairs {
 			englishWord = input.nextLine();
 		}
 
-		System.out.println();
-		Collections.sort(wordList, new Comparator<WordPair>() {
-			public int compare(WordPair w1, WordPair w2) {
-				return Integer.valueOf(w1.getEnglishWord().compareTo(w2.getEnglishWord()));
-			}
-		});
+		Collections.sort(wordList, new EnglishSorting());
 
-		for (int i = 0; i < wordList.size(); i++) {
-			System.out.print(wordList.get(i).getEnglishWord() + " = " + wordList.get(i).getFinnishWord() + "\n");
+		for (WordPair wordPair : wordList) {
+			System.out.println(wordPair.getEnglishWord() + " = " + wordPair.getEnglishWord());
 		}
-
-		Collections.sort(wordList, new Comparator<WordPair>() {
-			public int compare(WordPair w1, WordPair w2) {
-				return Integer.valueOf(w1.getFinnishWord().compareTo(w2.getFinnishWord()));
-			}
-		});
-
+		
 		System.out.println();
-		for (int i = 0; i < wordList.size(); i++) {
-			System.out.print(wordList.get(i).getFinnishWord() + " = " + wordList.get(i).getEnglishWord() + "\n");
+		Collections.sort(wordList, new FinnishSorting());
+
+		for (WordPair wordPair : wordList) {
+			System.out.println(wordPair.getFinnishWord() + " = " + wordPair.getFinnishWord());
 		}
+		input.close();
 
 	}
 
