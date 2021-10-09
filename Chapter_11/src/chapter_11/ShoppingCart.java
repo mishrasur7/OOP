@@ -15,7 +15,13 @@ public class ShoppingCart {
 	}
 
 	public void remove(Product product) {
-		this.itemList = null; 
+		int index = 0; 
+		for (int i = 0; i < itemList.size(); i++) {
+			if(product.equals(itemList.get(i).getProduct())) {
+				index = i; 
+			}
+		}
+		itemList.remove(index); 
 	}
 
 	public double getTotalPrice() {
@@ -39,7 +45,7 @@ public class ShoppingCart {
 						+ twoDecimals.format(itemList.get(i).getProduct().getPrice()) + ", " + "subtotal: "
 						+ twoDecimals.format(itemList.get(i).getSubTotal()) + "\n";
 			}
-			outPutText += "TOTAL PRICE: " + twoDecimals.format(getTotalPrice());
+			outPutText += "TOTAL PRICE: " + twoDecimals.format(getTotalPrice()) + " euros";
 
 		}
 
