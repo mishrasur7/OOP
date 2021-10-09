@@ -1,5 +1,6 @@
 package chapter_11;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class ShoppingCart {
@@ -14,7 +15,7 @@ public class ShoppingCart {
 	}
 
 	public void remove(Product product) {
-		itemList.remove(product);
+		this.itemList = null; 
 	}
 
 	public double getTotalPrice() {
@@ -26,15 +27,23 @@ public class ShoppingCart {
 	}
 
 	public String toString() {
+		DecimalFormat twoDecimals = new DecimalFormat("0.00");
+		String outPutText = "";
+		if (getTotalPrice() == 0) {
+			outPutText += "There are no items in the shopping cart.";
+		} else {
+			outPutText = "=== Shopping cart ===" + "\n";
+			for (int i = 0; i < itemList.size(); i++) {
+				outPutText += itemList.get(i).getProduct().getNumber() + ": " + itemList.get(i).getProduct().getName()
+						+ ", " + "quantity: " + itemList.get(i).getQuantity() + ", " + "unit price: "
+						+ twoDecimals.format(itemList.get(i).getProduct().getPrice()) + ", " + "subtotal: "
+						+ twoDecimals.format(itemList.get(i).getSubTotal()) + "\n";
+			}
+			outPutText += "TOTAL PRICE: " + twoDecimals.format(getTotalPrice());
 
-		System.out.println("=== Shopping cart ===");
-		String outPut = "";
-		for (int i = 0; i < itemList.size(); i++) {
-			outPut += itemList.get(i).getProduct().getNumber() + ": " + itemList.get(i).getProduct().getName() + ", "
-					+ "quantity: " + itemList.get(i).getQuantity() + ", " + "unit price: "
-					+ itemList.get(i).getProduct().getPrice() + ", " + "subtotal: " + itemList.get(i).getSubTotal() + "\n";
 		}
-		return outPut + "TOTAL PRICE: " + getTotalPrice();
+
+		return outPutText;
 	}
 
 }
