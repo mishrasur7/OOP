@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
-
-public class ObjectsSortingWordPairs {
+			
+public class ObjectsSortingWordPairsLambda {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
@@ -23,16 +23,14 @@ public class ObjectsSortingWordPairs {
 		}
 		input.close();
 
-		Collections.sort(wordList);
-
-		for (WordPair wordPair : wordList) {
+		Collections.sort(wordList, (a, b) -> a.getEnglishWord().compareTo(b.getEnglishWord()));
+		for(WordPair wordPair : wordList) {
 			System.out.println(wordPair);
 		}
-
+		
 		System.out.println();
-
-		Collections.sort(wordList, new FinnishSorting());
-		for (int i = 0; i < wordList.size(); i++) {
+		Collections.sort(wordList, (a, b) -> a.getFinnishWord().compareTo(b.getFinnishWord()));
+		for(int i = 0; i < wordList.size(); i++) {
 			System.out.println(wordList.get(i).getFinnishWord() + " = " + wordList.get(i).getEnglishWord());
 		}
 
