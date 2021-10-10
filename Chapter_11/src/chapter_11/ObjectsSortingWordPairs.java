@@ -1,8 +1,8 @@
 package chapter_11;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Scanner;
 
 public class ObjectsSortingWordPairs {
@@ -21,24 +21,21 @@ public class ObjectsSortingWordPairs {
 			System.out.print("Enter an English word (quit ends): ");
 			englishWord = input.nextLine();
 		}
-		Collections.sort(wordList);
-
-		for (WordPair wordPair : wordList) {
-			System.out.println(wordPair.getEnglishWord() + " = " + wordPair.getFinnishWord());
-		}
-		
-		System.out.println();
-		
-		
-		Collections.reverse(wordList);
-		
-		Collections.sort(wordList);
-
-		for (WordPair wordPair : wordList) {
-			System.out.println(wordPair.getFinnishWord() + " = " + wordPair.getEnglishWord());
-		}
 		input.close();
+	
+		Collections.sort(wordList);
 
+		for (WordPair wordPair : wordList) {
+			System.out.println(wordPair);
+		}
+
+		System.out.println();
+
+		Collections.sort(wordList, new FinnishSorting());
+		for (int i = 0; i < wordList.size(); i++) {
+			System.out.println(wordList.get(i).getFinnishWord() + " = " + wordList.get(i).getEnglishWord());
+		}
+		
 	}
 
 }

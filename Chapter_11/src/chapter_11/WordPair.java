@@ -1,6 +1,6 @@
 package chapter_11;
 
-public class WordPair implements Comparable<WordPair>{
+public class WordPair implements Comparable<WordPair> {
 
 	private String englishWord;
 	private String finnishWord;
@@ -22,9 +22,8 @@ public class WordPair implements Comparable<WordPair>{
 		return englishWord + " = " + finnishWord;
 	}
 
-	@Override
 	public int compareTo(WordPair o) {
-		return englishWord.compareTo(o.englishWord); 
+		return this.englishWord.compareTo(o.englishWord);
 	}
-	
+
 }
