@@ -26,4 +26,5 @@ public class WordPair implements Comparable<WordPair>{
 	public int compareTo(WordPair o) {
 		return englishWord.compareTo(o.englishWord); 
 	}
+	
 }

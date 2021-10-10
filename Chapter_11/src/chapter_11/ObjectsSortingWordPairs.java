@@ -21,18 +21,21 @@ public class ObjectsSortingWordPairs {
 			System.out.print("Enter an English word (quit ends): ");
 			englishWord = input.nextLine();
 		}
-
-		Collections.sort(wordList, new EnglishSorting());
+		Collections.sort(wordList);
 
 		for (WordPair wordPair : wordList) {
-			System.out.println(wordPair.getEnglishWord() + " = " + wordPair.getEnglishWord());
+			System.out.println(wordPair.getEnglishWord() + " = " + wordPair.getFinnishWord());
 		}
 		
 		System.out.println();
-		Collections.sort(wordList, new FinnishSorting());
+		
+		
+		Collections.reverse(wordList);
+		
+		Collections.sort(wordList);
 
 		for (WordPair wordPair : wordList) {
-			System.out.println(wordPair.getFinnishWord() + " = " + wordPair.getFinnishWord());
+			System.out.println(wordPair.getFinnishWord() + " = " + wordPair.getEnglishWord());
 		}
 		input.close();
 
