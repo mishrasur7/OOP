@@ -22,6 +22,8 @@ public class ObjectsSortingWordPairsLambda {
 			englishWord = input.nextLine();
 		}
 		input.close();
+		
+		//sorting the arraylist with lambda expression 
 
 		Collections.sort(wordList, (a, b) -> a.getEnglishWord().compareTo(b.getEnglishWord()));
 		for(WordPair wordPair : wordList) {
