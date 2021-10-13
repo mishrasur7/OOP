@@ -5,6 +5,7 @@ package JavaBankApplication;
 // - The program class for the BankApplication exercise
 // ************************************************************************
 import java.util.Scanner;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class BankProgram {
@@ -47,8 +48,8 @@ public class BankProgram {
 		String line = "-----------------------------------------------------"
 				+ "---------------------------------------------------------------";
 		System.out.println(line);
-		System.out.print(" 0 = Quit | 1 = List accounts | 2 = Add an account | " +
-						 "3 = Deposit money | 4 = Withdraw money | 5 = Delete an account \n");
+		System.out.print(" 0 = Quit | 1 = List accounts | 2 = Add an account | "
+				+ "3 = Deposit money | 4 = Withdraw money | 5 = Delete an account \n");
 		System.out.println(line);
 		System.out.print("Enter your choice: ");
 	}
@@ -56,12 +57,42 @@ public class BankProgram {
 	// *** NB! Edit only the methods below. DO NOT add any other methods! ***
 
 	private static void listAccounts() {
+		DecimalFormat twoDecimals = new DecimalFormat("0.00");
 		System.out.print("\n*** Account list ***\n");
+		for (Account accounts : accountList) {
+			System.out.println("Number: " + accounts.getAccountNumber() + " | Balance: "
+					+ twoDecimals.format(accounts.getBalance()));
+		}
 
 	}
 
 	private static void addAccount() {
 		System.out.print("\n*** Add an account ***\n");
+		System.out.print("Enter account number: ");
+		Scanner input = new Scanner(System.in);
+		String inputString = input.nextLine();
+		accountList.add(new Account(inputString, 0));
+		System.out.println("Account created successfully!");
+		int index = 0;
+		boolean found = false; 
+		while (accountList.size() > 0) {
+			System.out.print("Enter account number: ");
+			inputString = input.nextLine();
+			if (inputString.equals(accountList.get(index).getAccountNumber())) {
+				found = true; 
+			}
+				
+			index++;
+		}
+		for(int i = 0; i < accountList.size(); i++) {
+			if(found == false ) {
+				accountList.add(new Account(inputString, 0));
+				System.out.println("Account created successfully!");
+			} else {
+				System.out.println("NO");
+			}
+		}
+		
 
 	}
 
@@ -70,17 +101,28 @@ public class BankProgram {
 	// OR null if the account is not found in accountList.
 	private static Account findAccount(String accountNumber) {
 		Account myAccount = null;
+		for (int i = 0; i < accountList.size(); i++) {
+			if (accountNumber.equals(accountList.get(i).getAccountNumber())) {
+				myAccount = accountList.get(i);
+			}
+		}
 
 		return myAccount;
 	}
 
 	private static void depositMoney() {
 		System.out.print("\n*** Deposit money to an account ***\n");
+		String inputAccount = input.nextLine();
+		Account myAccount = findAccount(inputAccount);
+		if (myAccount != null) {
+
+		}
 
 	}
 
 	private static void withdrawMoney() {
 		System.out.print("\n*** Withdraw money from an account ***\n");
+		String withDraw = input.nextLine();
 
 	}
 
