@@ -66,6 +66,10 @@ public class BankProgram {
 		displayMenu();
 
 	}
+	
+	/* this addAccount method is working but its not giving the user flexibility and complete freedom,
+	 I wanted to work on this but unfortunately 
+	 I got little time now so I can work on this later when time is available for me*/
 
 	private static void addAccount() {
 		System.out.print("\n*** Add an account ***\n");
