@@ -32,7 +32,7 @@ public class Account {
 	
 	public boolean withDraw(double amount) {
 		boolean exist = false; 
-		if(this.balance > amount && amount > 0) {
+		if(this.balance >= amount && amount > 0) {
 			exist = true; 
 			this.balance = balance - amount; 
 		} else {
