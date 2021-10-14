@@ -73,25 +73,23 @@ public class BankProgram {
 		String inputString = input.nextLine();
 		accountList.add(new Account(inputString, 0));
 		System.out.println("Account created successfully!");
-		int index = 0;
+		
 		boolean found = false; 
-		while (accountList.size() > 0) {
+		for(int i = 0; i < accountList.size(); i++) {
 			System.out.print("Enter account number: ");
 			inputString = input.nextLine();
-			if (inputString.equals(accountList.get(index).getAccountNumber())) {
+			if(inputString.equals(accountList.get(i).getAccountNumber())) {
 				found = true; 
-			}
-				
-			index++;
+			} 
 		}
-		for(int i = 0; i < accountList.size(); i++) {
-			if(found == false ) {
-				accountList.add(new Account(inputString, 0));
-				System.out.println("Account created successfully!");
-			} else {
-				System.out.println("NO");
-			}
+
+		if(found == false) {
+			accountList.add(new Account(inputString, 0));
+			System.out.println("Account created successfully!");
+		} else {
+			System.out.println("NO");
 		}
+		
 		
 
 	}
